@@ -56,3 +56,10 @@ for (let callBtn of callBtns) {
     }
   });
 }
+
+
+
+// clear history
+document.getElementById("clear-history").addEventListener("click", function () {
+  callInfo.innerText = " ";
+});
