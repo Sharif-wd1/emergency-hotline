@@ -63,3 +63,21 @@ for (let callBtn of callBtns) {
 document.getElementById("clear-history").addEventListener("click", function () {
   callInfo.innerText = " ";
 });
+
+
+
+//copy count
+let copyCount = 0;
+const copyCountDisplay = document.getElementById('copy-count');
+const copyButtons = document.getElementsByClassName('copy-btn');
+
+for (let btn of copyButtons) {
+  btn.addEventListener('click', function() {
+    const number = btn.closest('.card').querySelector('.number').innerText;
+    navigator.clipboard.writeText(number).then(() => {
+      copyCount += 1;
+      copyCountDisplay.innerText = copyCount;
+      alert(`Copied: ${number}`);
+    });
+  });
+}
